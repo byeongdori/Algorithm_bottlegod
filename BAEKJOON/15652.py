@@ -14,11 +14,12 @@ def back_tracking(n, m, current, loop):
     # 재귀 종료 조건
     if loop == m:
         print(*output)
+        return
 
     # 재귀 내부
-    for i in range (current, n):
+    for i in range (current, n + 1):
         output.append(i)
-        back_tracking(n, m, current, loop + 1)
+        back_tracking(n, m, i, loop + 1)
         output.pop()
 
-back_tracking(n, m, 1, 1)
+back_tracking(n, m, 1, 0)
