@@ -1,4 +1,3 @@
-# 수 정렬하기 2 - Using Merge Sort
 import copy
 
 num_count = int(input())
