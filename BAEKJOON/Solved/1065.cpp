@@ -17,7 +17,11 @@ int main() {
     }
 
     for (int i = 100; i <= input; i++) {
-        // 정직하게 비교...
+        A = i % 10;
+        B = (i / 10) % 10;
+        C = (i / 10) / 10;
+        if ((B - A) == (C - B))
+            count++;
     }
     cout << count + 99;
 }
