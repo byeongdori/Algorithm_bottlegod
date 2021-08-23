@@ -5,9 +5,10 @@
 # total[n] = score[n] + score[n-1] + total[n-3]
 # total[n] = score[n] + total[n-2]
 
+# 최소 배열크기 저장하기
 num_of_step = int(input())
-score_of_step = [0 for i in range (num_of_step + 1)]
-max_score_of_current_step = [0 for i in range (num_of_step + 1)]
+score_of_step = [0 for i in range (num_of_step + 3)]
+max_score_of_current_step = [0 for i in range (num_of_step + 3)]
 
 for i in range(0, num_of_step):
     score_of_step[i] = int(input())
