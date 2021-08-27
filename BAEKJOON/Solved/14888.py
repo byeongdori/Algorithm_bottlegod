@@ -4,7 +4,7 @@ import sys
 
 n = int(input())
 num_arr = list(map(int, input().split()))
-op_arr= list(map(int, input().split()))
+op_arr = list(map(int, input().split()))
 
 current_cal = num_arr[0]
 result_max = - sys.maxsize - 1
