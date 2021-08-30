@@ -13,14 +13,22 @@ def solution(key, lock):
     for i in range (key_len, board_len - key_len):
         for j in range (key_len, board_len - key_len):
             board_arr[i][j] = lock[i - key_len][j - key_len]
+    
+    # attach 함수 호출
+    # check 함수 호출
+    # detach 함수 호출
+
+    # 회전 후 다시 반복
+    
+    # 모든 경우 탐색 시 False
 
 def rotate(key):
     pass
 
-def attach(x, y):
+def attach(x, y, key, board):
     pass
 
-def detach(x, y):
+def detach(x, y, key, board):
     pass
 
 def check():

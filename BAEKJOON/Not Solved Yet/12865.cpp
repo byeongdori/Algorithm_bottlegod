@@ -6,22 +6,32 @@
 
 using namespace std;
 
+int dp[101][100001] = { 0 };
+
 int main() {
 
-    int total_num, max_weight;
-
+    int total_num, max_weight, temp;
     cin >> total_num >> max_weight;
-    
+
     vector<int> weight;
     vector<int> value;
-    vector<int> value_per_weight;
 
     for (int i = 0; i < total_num; i++) {
-        weight.push_back(cin.get());
-        value.push_back(cin.get());
-        value_per_weight.push_back(value[i] / weight[i]);
+        cin >> temp;
+        weight.push_back(temp);
+        cin >> temp;
+        value.push_back(temp);
     }
 
-    // 무게당 가치를 기준으로 세 배열을 한꺼번에 정리해야함
-    // 동적 계획법 사용하기
+    for (int i = weight[0]; i <= max_weight; i++)
+        dp[1][i] = value[0];
+
+    // 다이나믹 프로그래밍
+    // dp[i][j] = max(dp[i-1][j], dp[i][j - 넣을 무게] + 넣을 물품의 가치)
+    for (int i = 1; i <= total_num; i++) {
+        for (int j = 1; j <= max_weight; j++) {
+            
+        }
+    }
+
 }
