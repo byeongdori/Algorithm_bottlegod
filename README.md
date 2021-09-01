@@ -1,4 +1,4 @@
-# Algorithm_bottlegod
+# Algorithm_byeongdori
 
 Solve Algorithm Problem
 
