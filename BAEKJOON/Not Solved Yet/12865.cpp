@@ -35,8 +35,8 @@ int main() {
     for (int i = 2; i <= total_num; i++) {
         for (int j = 1; j <= max_weight; j++) {
             push_weight = weight[i];
-            if (push_weight - j > 0)
-                dp[i][j] = dp[i - 1][j] > dp[i][j - push_weight] + value[i]? dp[i - 1][j] : dp[i][j - push_weight] + value[i];
+            if (push_weight - j >= 0)
+                dp[i][j] = (dp[i - 1][j] > dp[i][j - push_weight] + value[i])? dp[i - 1][j] : dp[i][j - push_weight] + value[i];
             cout << "i " << i << " j " << j << " dp " << dp[i][j] << endl;
         }
     }
