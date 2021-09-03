@@ -2,7 +2,7 @@
 # 자물쇠와 열쇠
 # https://programmers.co.kr/learn/courses/30/lessons/60059
 # key 배열에 제로 패딩 추가해서 완전 탐색
-
+# 함수 동작 제대로 하는지 확인하기
 
 def solution(key, lock):
     # 제로패딩 추가한 board 배열 생성 및 초기화
@@ -14,22 +14,54 @@ def solution(key, lock):
         for j in range (key_len, board_len - key_len):
             board_arr[i][j] = lock[i - key_len][j - key_len]
     
-    # attach 함수 호출
-    # check 함수 호출
-    # detach 함수 호출
+    # 함수 이용해 자물쇠 맞춰보기
+    for k in range (0, 4):
+        for i in range (0, board_len - key_len):
+            for j in range (0, board_len - key_len):
+                attach(i, j, key, board_arr)
+                if check(key_len, board_arr):
+                    return print("true")
+                detach(i, j, key, board_arr)
+        rotate(key)
 
-    # 회전 후 다시 반복
-    
-    # 모든 경우 탐색 시 False
+    return print("false")
 
+# key 회전
 def rotate(key):
-    pass
+    key_len = len(key)
+    rotate_key = [[0 for i in range(key_len)] for i in range(key_len)]
+    for i in range (0, key_len):
+        for j in range (0, key_len):
+            rotate_key[i][j] = key[j][key_len - i - 1]
+    return rotate_key
 
+# key와 자물쇠 결합
 def attach(x, y, key, board):
-    pass
+    key_len = len(key)
+    for i in range (x, x+key_len):
+        for j in range (y, y+key_len):
+            board[i][j] = board[i][j] + key[i - x][j- y]
+    return board
 
+# key와 자물쇠 해제
 def detach(x, y, key, board):
-    pass
+    key_len = len(key)
+    for i in range (x, x+key_len):
+        for j in range (y, y+key_len):
+            board[i][j] = board[i][j] - key[i - x][j- y]
+    return board
 
-def check():
-    pass
+# 풀렸는지 체크하는 함수
+def check(key_len, board):
+    board_len = len(board)
+    for i in range (key_len, board_len - key_len):
+        for j in range (key_len, board_len - key_len):
+            print(board[i][j])
+            if board[i][j] == 0:
+                print("###")
+                return False
+    return True
+
+key = [[0, 0, 0], [1, 0, 0], [0, 1, 1]]	
+lock = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
+solution(key, lock)

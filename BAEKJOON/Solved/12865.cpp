@@ -25,21 +25,17 @@ int main() {
         value.push_back(temp);
     }
 
-    for (int i = weight[1]; i <= max_weight; i++) {
-        dp[1][i] = value[1];
-        cout << "i " << 1 << " j " << i << " dp " << dp[1][i] << endl;
-    }
-
-    // 다이나믹 프로그래밍
-    // dp[i][j] = max(dp[i-1][j], dp[i][j - 넣을 무게] + 넣을 물품의 가치)
-    for (int i = 2; i <= total_num; i++) {
+    // 다이나믹 프로그래밍, 한 물건을 여러번 X
+    // dp[i][j] = max(dp[i-1][j], dp[i - 1][j - 넣을 무게] + 넣을 물품의 가치)
+    for (int i = 1; i <= total_num; i++) {
         for (int j = 1; j <= max_weight; j++) {
             push_weight = weight[i];
-            if (push_weight - j >= 0)
-                dp[i][j] = (dp[i - 1][j] > dp[i][j - push_weight] + value[i])? dp[i - 1][j] : dp[i][j - push_weight] + value[i];
-            cout << "i " << i << " j " << j << " dp " << dp[i][j] << endl;
+            if (j - push_weight >= 0)
+                dp[i][j] = (dp[i - 1][j] > (dp[i - 1][j - push_weight] + value[i])) ? dp[i - 1][j] : dp[i - 1][j - push_weight] + value[i];
+            else
+                dp[i][j] = dp[i - 1][j];
         }
     }
 
     cout << dp[total_num][max_weight];
-}   
+}
