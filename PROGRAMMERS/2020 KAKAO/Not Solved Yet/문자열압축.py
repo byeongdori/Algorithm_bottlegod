@@ -14,4 +14,8 @@ def solution(s):
 
 def compress_string(divide_length, str):
     # 문자열 압축시 압축된 길이 반환하는 함수
+    str_len = len(str)
+    divide_str = str[:divide_length]
+    for i in range (divide_length, str_len):
+        # str[i:i+divie_length]
     pass

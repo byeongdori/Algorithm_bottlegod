@@ -10,7 +10,7 @@ k = int(input_spilt[1])
 # n, k 행 열로 가지는 2차원 배열로 생성
 Combi = [[1 for i in range(n + 1)] for i in range(n + 1)]
 
-for i in range(2, n + 1):
+for i in range(1, n + 1):
     for j in range(1, i + 1):
         if j == 1:
             Combi[i][j] = i

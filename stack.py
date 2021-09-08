@@ -1,13 +1,9 @@
-# 10828 - 스택 
-# 기본 스택 자료구조 파일로써 완성하면
-# 복사해서 파일하나 빼놓기
-# pop하고 push가 안됌
+# Node를 활용한 Stack 자료구조
 
 class Node():
     def __init__(self, data):
         self.next_node = None
         self.data = data
-
 
 class Stack():
 
@@ -32,6 +28,11 @@ class Stack():
         else:
             pop_data = self.top_node.data
             temp = self.first_node
+            if self.element == 1:
+                self.top_node = None
+                self.first_node = None
+                self.element = 0
+                return pop_data
             while temp.next_node != self.top_node:
                 temp = temp.next_node
             self.top_node = temp
@@ -53,18 +54,3 @@ class Stack():
             return -1
         else:
             return self.top_node.data
-
-num = int(input())
-stack = Stack()
-for i in range (num):
-    input_split = input().split()
-    if input_split[0] == "push":
-        stack.push(input_split[1])
-    elif input_split[0] == "pop":
-        print(stack.pop())
-    elif input_split[0] == "size":
-        print(stack.size())
-    elif input_split[0] == "empty":
-        print(stack.empty())
-    elif input_split[0] == "top":
-        print(stack.top())

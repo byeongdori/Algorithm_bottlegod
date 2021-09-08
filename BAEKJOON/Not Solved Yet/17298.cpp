@@ -1,6 +1,7 @@
-// 1010 - 다리 놓기
+// 17298 - 오큰수
 
 #include <iostream>
+#include <stack>
 
 using namespace std;
 
