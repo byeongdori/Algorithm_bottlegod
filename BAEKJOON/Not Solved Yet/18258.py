@@ -8,4 +8,24 @@ class Node():
         self.data = data
 
 class Queue():
-    pass
+    
+    def __init__(self):
+        pass
+
+    def push(self, data):
+        pass
+
+    def pop(self):
+        pass
+
+    def size(self):
+        pass
+
+    def empty(self):
+        pass
+
+    def front(self):
+        pass
+
+    def back(self):
+        pass
