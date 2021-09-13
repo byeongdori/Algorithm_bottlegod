@@ -10,19 +10,40 @@ class Node():
 class Queue():
     
     def __init__(self):
-        pass
+        self.head = None
+        self.tail = None
+        self.element = 0
 
     def push(self, data):
-        pass
+        new_node = Node()
+        new_node.data = data
+        if self.head == None:
+            self.tail = new_node
+            self.head = new_node
+        else:
+            self.head.next_node = new_node
+            self.head = new_node
+        self.element += 1
 
     def pop(self):
-        pass
+        if self.head == None:
+            return -1
+        else:
+            temp = self.tail
+            self.tail = temp.next_node
+            result = temp.data
+            del temp
+            self.element -= 1
+            return result
 
     def size(self):
-        pass
+        return self.element
 
     def empty(self):
-        pass
+        if self.element == 0:
+            return 1
+        else:
+            return 0
 
     def front(self):
         pass
