@@ -1,52 +1,48 @@
 # 18258 - 큐 2
-# 다만들면 큐 자료구조 하나 복사해서 뽑아놓기
 
-# 노드 구상부터 다시 시작!
-class Node():
-    def __init__(self, data):
-        self.next_node = None
-        self.data = data
+import sys
+from collections import deque
 
-class Queue():
+n = int(sys.stdin.readline())
+deque = deque()
+
+def push(queque, x):
+    deque.append(x) 
+
+def pop(deque): 
+    if(not deque): 
+        return -1 
+    else: return deque.popleft() 
     
-    def __init__(self):
-        self.head = None
-        self.tail = None
-        self.element = 0
+def size(): 
+    return len(deque)
 
-    def push(self, data):
-        new_node = Node()
-        new_node.data = data
-        if self.head == None:
-            self.tail = new_node
-            self.head = new_node
-        else:
-            self.head.next_node = new_node
-            self.head = new_node
-        self.element += 1
+def empty(): 
+    if(not deque): 
+        return 1 
+    else: return 0 
+    
+def front(): 
+    if(not deque): 
+        return -1 
+    else: return deque[0] 
 
-    def pop(self):
-        if self.head == None:
-            return -1
-        else:
-            temp = self.tail
-            self.tail = temp.next_node
-            result = temp.data
-            del temp
-            self.element -= 1
-            return result
+def back(): 
+    if(not deque):
+         return -1 
+    else: return deque[-1] 
 
-    def size(self):
-        return self.element
-
-    def empty(self):
-        if self.element == 0:
-            return 1
-        else:
-            return 0
-
-    def front(self):
-        pass
-
-    def back(self):
-        pass
+for i in range(n): 
+    oper = sys.stdin.readline().split() 
+    if (oper[0] == "push"): 
+        push(deque, oper[1]) 
+    elif(oper[0] == "pop"): 
+        print(pop(deque)) 
+    elif(oper[0] == "size"): 
+        print(size()) 
+    elif(oper[0] == "empty"): 
+        print(empty()) 
+    elif(oper[0] == "front"): 
+        print(front()) 
+    elif(oper[0] == "back"): 
+        print(back())
