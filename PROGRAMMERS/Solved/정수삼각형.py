@@ -17,6 +17,3 @@ def solution(triangle):
                 max_sum[i][j] = triangle[i][j] + max(max_sum[i - 1][j - 1], max_sum[i - 1][j])
 
     return max(max_sum[size - 1])
-
-arr = [[7], [3, 8], [8, 1, 0], [2, 7, 4, 4], [4, 5, 2, 6, 5]]
-solution(arr)
