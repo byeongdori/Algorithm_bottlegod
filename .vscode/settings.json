@@ -1,5 +1,7 @@
 {
-    "files.associations": {
-        "iosfwd": "cpp"
-    }
+  "files.associations": {
+    "*.cpp": "cpp",
+    "iosfwd": "cpp",
+    "xutility": "cpp"
+  }
 }
