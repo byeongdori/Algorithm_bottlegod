@@ -18,7 +18,6 @@ while start < end:
         temp += arr[end]
     elif temp < S:
         if start + 1 == end:
-            if end 
             end += 1
             temp += arr[end]
         else:
