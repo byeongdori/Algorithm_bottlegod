@@ -1,4 +1,4 @@
-// 9251 - LCS
+// 9252 - LCS 2
 // 다이나믹 프로그래밍, 이차원 배열 생성해서 비교
 
 #include <iostream>
@@ -36,7 +36,6 @@ int main() {
 
     cout << LCS_arr[i][j] << endl;
 
-    /*
     if (LCS_arr[i][j] != 0) {
         while (LCS_arr[i][j] != 0) {
             if (LCS_arr[i][j] == LCS_arr[i - 1][j])
@@ -54,5 +53,4 @@ int main() {
         for (i = 0; i < resultLCS.size(); i++)
             cout << resultLCS[i];
     }
-    */
 }
