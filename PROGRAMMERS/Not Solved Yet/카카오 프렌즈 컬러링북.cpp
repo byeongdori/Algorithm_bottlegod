@@ -12,15 +12,15 @@ vector<int> solution(int m, int n, vector<vector<int>> picture) {
     int number_of_area = 0;
     int max_size_of_one_area = 0;
 
-    int color;
+    int color, size_of_one_area;
     bool visit[101][101] = {false};
     queue<pair<int, int>> q;
     
     for (int i = 1; i <= m; i++)
         for (int j = 1; j <= n; j++) {
             if (picture[i][j] != 0 & visit[i][j] == false)
-                // bfs 실행
-                ;
+                size_of_one_area = dfs(i, j);
+                number_of_area++;
         }
 
 
@@ -35,4 +35,12 @@ vector<int> solution(int m, int n, vector<vector<int>> picture) {
     answer[0] = number_of_area;
     answer[1] = max_size_of_one_area;
     return answer;
+}
+
+int dfs(int i, int j) {
+    int area_size;
+    int dx[4] = {0, 0, -1, 1};
+    int dy[4] = {1, -1, 0, 0};
+
+    return area_size;
 }
