@@ -17,5 +17,7 @@ public class Windblume_Ode {
             // 최대 부분집합 계산하기
 
         }
+
+        input.close();
     }
 }
