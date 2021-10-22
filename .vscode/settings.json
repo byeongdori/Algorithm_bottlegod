@@ -7,7 +7,8 @@
     "iostream": "cpp"
   },
   "java.project.sourcePaths": [
+    "BAEKJOON/Solved/2000~",
     "BAEKJOON/Not Solved Yet",
-    "BAEKJOON/Solved/2000~"
+    "CODEFORCES/Not Solved Yet"
   ]
 }
