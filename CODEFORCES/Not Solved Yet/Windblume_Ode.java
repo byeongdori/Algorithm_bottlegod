@@ -7,6 +7,7 @@ public class Windblume_Ode {
         int testcase = input.nextInt();
 
         for (int i = 0; i < testcase; i++) {
+
             // 인풋 받아서 배열에 저장하는 과정
             int size = input.nextInt();
             int arr[] = new int[size];
@@ -14,7 +15,8 @@ public class Windblume_Ode {
                 arr[j] = input.nextInt();
             }
 
-            // 최대 부분집합 계산하기
+            // 소수가 아닌 최대 부분집합 계산하기
+            
 
         }
 
