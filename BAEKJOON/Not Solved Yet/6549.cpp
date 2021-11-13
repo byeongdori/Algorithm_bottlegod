@@ -1,5 +1,6 @@
 // 6549 - 히스토그램에서 가장 큰 직사각형
 // 이거 종만북에 있었던 것 같은데 참고하기ㅎ
+// https://nnnlog.tistory.com/15
 #include <iostream>
 #include <vector>
 
