@@ -1,5 +1,5 @@
 # 1018 - 체스판 다시 칠하기
-# 왜 안됌?
+# 왜 안됌? - 아 퍼컬 라컬 둘다 같은 경우;;;
 
 def check_board(arr, i, j):
     first_color = arr[i][j]
