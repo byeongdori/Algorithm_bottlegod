@@ -2,6 +2,7 @@
 # BFS, 브루트 포스
 
 from collections import deque
+import sys
 
 answer = -1
 
@@ -30,14 +31,11 @@ def virusbfs(area):
         for j in range(M):
             if area[i][j] == 0:
                 safe_area = safe_area + 1
-    
-    print(safe_area)
     return safe_area
 
 def wallcreate(wall_count):
     global answer
     if wall_count == 3:
-        print("hello")
         temp = [[0] * M for _ in range(N)]
         for i in range(N):
             for j in range(M):
@@ -49,6 +47,7 @@ def wallcreate(wall_count):
         for j in range(M):
             if area[i][j] == 0:
                 area[i][j] = 1
+                # wall_count = wall_count + 1 하고 wall_count 인자로 넘기면 안됌!
                 wallcreate(wall_count + 1)
                 area[i][j] = 0
 
@@ -56,7 +55,7 @@ N, M = map(int, input().split())
 
 area = []
 for i in range(N):
-    area.append(list(map(int, input().split())))
+    area.append(list(map(int, sys.stdin.readline().split())))
 
 wallcreate(0)
 print(answer)

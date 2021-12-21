@@ -4,7 +4,8 @@
     "iosfwd": "cpp",
     "xutility": "cpp",
     "vector": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "algorithm": "cpp"
   },
   "java.project.sourcePaths": [
     "BAEKJOON/Solved/2000~",
