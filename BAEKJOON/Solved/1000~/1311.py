@@ -1,6 +1,5 @@
 # 1311 - 할 일 정하기 1
 # dp, 비트 마스킹
-# 이해 다시 해보기
 import sys
 
 N = int(input())
