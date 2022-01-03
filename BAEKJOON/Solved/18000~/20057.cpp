@@ -1,5 +1,5 @@
 // 20057 - 마법사 상어와 토네이도
-// 디버깅
+
 #include <iostream>
 
 using namespace std;
@@ -49,7 +49,6 @@ int main() {
         bool exit = false;
         for (int i = 1; i <= 2; i++) {
             for (int j = 0; j < step; j++) {
-                //cout << start_y << start_x << endl;
                 tornado(start_y, start_x, dir);
                 start_y += dy[dir];
                 start_x += dx[dir];
@@ -71,25 +70,27 @@ int main() {
 
 void tornado(int y, int x, int direction) {
     int current_sand = arr[y + dy[direction]][x + dx[direction]];
-
+    int temp = current_sand;
     for (int i = 0; i < 9; i++) {
         int ny = y + dy[direction] + spread_dy[direction][i];
         int nx = x + dx[direction] + spread_dx[direction][i];
         if (ny > N || ny < 1 || nx > N || nx < 1) {
-            answer += (int)(current_sand * (percentage[i] / 100));
+            answer += (int)(current_sand * percentage[i] / 100);
         }
         else {
-            arr[ny][nx] += (int)(current_sand *(percentage[i]/100));
+            arr[ny][nx] += (int)(current_sand * percentage[i] / 100);
         }
-        current_sand -= (int)(current_sand * (percentage[i]/100));
+        temp -= (int)(current_sand * percentage[i] / 100);
     }
 
     int ny = y + dy[direction] + spread_dy[direction][9];
     int nx = x + dx[direction] + spread_dx[direction][9];
     if (ny > N || ny < 1 || nx > N || nx < 1) {
-        answer += current_sand;
+        answer += temp;
     }
     else {
-        arr[ny][nx] += current_sand;
+        arr[ny][nx] += temp;
     }
+
+    arr[y + dy[direction]][x + dx[direction]] = 0;
 }
