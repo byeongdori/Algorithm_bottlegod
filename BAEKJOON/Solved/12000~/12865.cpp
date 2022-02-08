@@ -26,6 +26,7 @@ int main() {
     }
 
     // 다이나믹 프로그래밍, 한 물건을 여러번 X
+    // i번째 까지의 물건을 j의 무게로 담는 경우
     // dp[i][j] = max(dp[i-1][j], dp[i - 1][j - 넣을 무게] + 넣을 물품의 가치)
     for (int i = 1; i <= total_num; i++) {
         for (int j = 1; j <= max_weight; j++) {

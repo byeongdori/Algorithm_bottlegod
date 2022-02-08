@@ -5,9 +5,9 @@ def move_hanoi(num_of_pan, start, to, via):
     if num_of_pan == 1:
         print(start, to)
     else:
-        move_hanoi(num_of_pan - 1, start, via, to)
-        print(start, to)
-        move_hanoi(num_of_pan - 1, via, to, start)
+        move_hanoi(num_of_pan - 1, start, via, to) # 1번의 n - 1개를 2번으로 이동
+        print(start, to) # 1번 남은 1개를 3번으로 이동
+        move_hanoi(num_of_pan - 1, via, to, start) # 2번의 n - 1개를 3번으로 이동
 
 
 total_pan = int(input())

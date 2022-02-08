@@ -1,4 +1,5 @@
 # 1037 - 약수
+# 가장 큰 약수 * 가장 작은 약수 = 원래 수
 
 n = int(input())
 num = list(map(int, input().split()))
