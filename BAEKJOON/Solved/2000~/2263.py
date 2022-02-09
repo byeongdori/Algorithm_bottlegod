@@ -27,6 +27,7 @@ postorder = list(map(int, input().split()))
 
 index = [0 for _ in range(100001)]
 for i in range(n):
+    # inorder[i]의 위치는 inorder 상의 i 번째에 있다!
     index[inorder[i]] = i
 
 preorder(0, n - 1, 0, n - 1)

@@ -9,6 +9,7 @@ int main() {
     int count, temp;
     cin >> count;
 
+    // 오름차순 우선순위 큐
     priority_queue<int, vector<int>, greater<int>> min_heap;
     for (int i = 0; i < count; i++) {
         scanf("%d", &temp);

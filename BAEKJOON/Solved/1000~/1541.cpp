@@ -12,6 +12,7 @@ int main() {
     int temp = 0;
     vector<int> num;
     vector<char> op;
+    // 입력 받기
     for (int i = 0; i < input.length(); i++) {
         if (input[i] == '+' || input[i] == '-') {
             num.push_back(temp / 10);
@@ -26,6 +27,7 @@ int main() {
         }
     }
 
+    
     int answer = num[0];
     bool minusappear = false;
     for (int i = 0; i < op.size(); i++) {

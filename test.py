@@ -1,9 +1,6 @@
-class test:
-    def __init__(self, a, b):
-        return a*b
+from collections import deque
 
-temp = 'a'
-temp_ = 'b'
+q = deque()
 
-if temp < temp_:
-    print(temp.upper())
+q.append(1)
+print(len(q))

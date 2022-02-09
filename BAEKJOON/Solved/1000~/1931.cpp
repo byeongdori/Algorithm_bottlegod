@@ -10,6 +10,7 @@ using namespace std;
 // 사용자 정의 정렬 함수!
 bool sort_vector(pair<int, int> p1, pair<int, int> p2) {
 
+    // 첫번째 원소가 같다면, 두번째 원소로 오름차순 정렬
     if (p1.second == p2.second) {
         return p1.first < p2.first;
     }

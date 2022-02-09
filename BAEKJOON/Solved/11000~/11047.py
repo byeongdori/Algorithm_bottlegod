@@ -14,6 +14,7 @@ for i in range (n):
 
 coin_num = 0
 i = 0
+# 큰 금액의 동전부터 시작
 while k > 0:
     if k >= coin_value[n - i - 1]:
         coin_num += int(k / coin_value[n - i - 1])
